@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"time"
 
 	_ "github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
@@ -25,4 +26,9 @@ func main() {
 	// })
 
 	// router.Run(":" + port)
+
+	for {
+		time.Sleep(10 * time.Second)
+		log.Println("Running")
+	}
 }
