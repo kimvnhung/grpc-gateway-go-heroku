@@ -12,6 +12,10 @@ import (
 	_ "github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
 	pb "hung.kv/protogenerated"
+
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 var (

@@ -5,7 +5,10 @@ go 1.17
 
 require (
 	github.com/gin-gonic/gin v1.7.4
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.11.1
 	github.com/heroku/x v0.0.33
+	google.golang.org/grpc v1.48.0
+	hung.kv/protogenerated v0.0.0-00010101000000-000000000000
 )
 
 require (
@@ -21,7 +24,12 @@ require (
 	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 // indirect
 	github.com/ugorji/go/codec v1.1.7 // indirect
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
-	golang.org/x/sys v0.0.0-20210423185535-09eb48e85fd7 // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
+	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e // indirect
+	golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d // indirect
+	golang.org/x/text v0.3.7 // indirect
+	google.golang.org/genproto v0.0.0-20220803205849-8f55acc8769f // indirect
+	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
+
+replace hung.kv/protogenerated => ./proto/binanceapigo
