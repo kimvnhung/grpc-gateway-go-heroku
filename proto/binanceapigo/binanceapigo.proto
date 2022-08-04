@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+option go_package = "hung.kv/protogenerated";
+
+package protogenerated;
+
+import "google/api/annotations.proto";
+
+service Simulator {
+
+    rpc Home(Empty) returns (HelloReply) {
+        option (google.api.http) = {
+            get: "/"
+        };
+    }
+
+    rpc SayHello (HelloRequest) returns (HelloReply) {
+        option (google.api.http) = {
+          post: "/v1/sayHello"
+          body: "*"
+        };
+    }
+
+    // rpc GetBalance(Empty) returns (BalanceReply){
+    //     option (google.api.http) = {
+    //         get: "/v1/getBalance"
+    //       };
+    // }
+
+    // rpc CreateOrder(Order) returns (NotifyReply){
+    //     option (google.api.http) = {
+    //         post: "/v1/createOrder"
+    //         body: "*"
+    //     };
+    // }
+
+    // rpc GetOrders(Empty) returns (OrdersReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getOrders"
+    //       };
+    // }
+
+    // rpc GetPositions(Empty) returns (PositionsReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getPositions"
+    //     };
+    // }
+
+    // rpc GetTopPnl(Empty) returns (TopPnlReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getTopPnl"
+    //     };
+    // }
+
+    // rpc GetTopRoe(Empty) returns (TopRoeReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getTopRoe"
+    //     };
+    // }
+
+    // rpc GetTotalLost(Empty) returns (TotalLostReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getTotalLost"
+    //     };
+    // }
+
+    // rpc GetTotalGain(Empty) returns (TotalGainReply) {
+    //     option (google.api.http) = {
+    //         get: "/v1/getTotalGain"
+    //     };
+    // }
+}
+
+message Empty {
+    
+}
+
+message BalanceReply{
+    int32 code = 1;
+    double balance = 2;
+}
+
+message Order {
+    string type = 1;
+    string symbol = 2;
+    double amount = 3;
+    double price = 4;
+    string side = 5;
+    string time = 6;
+}
+
+message Position {
+    string symbol = 1;
+    int32 leverage = 2;
+    double quantity = 3;
+    double pnl = 4;
+    double roe = 5;
+    double entryPrice = 6;
+    double markPrice = 7;
+    double takeProfitPrice = 8;
+    double stopLostPrice = 9;
+}
+
+message OrdersReply {
+    int32 code = 1;
+    repeated Order orders = 2;
+}
+
+message NotifyReply {
+    int32 code = 1;
+    string message = 2;
+}
+
+message PositionsReply {
+    int32 code = 1;
+    repeated Position positions = 2;
+}
+
+message TopPnlReply {
+    int32 code = 1;
+    double topPnl = 2;
+}
+
+message TopRoeReply {
+    int32 code = 1;
+    double topRoe = 2;
+}
+
+message TotalLostReply {
+    int32 code = 1;
+    double totalLost = 2;
+}
+
+message TotalGainReply {
+    int32 code = 1;
+    double totalGain = 2;
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
